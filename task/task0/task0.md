@@ -11,14 +11,14 @@ MITRE – это некоммерческая организация из США
 - **Mobile ATT&CK** (для мобильных приложений),
 - **ICS ATT&CK** (для промышленных систем управления).
 
-![Компьютер](/screen/screen1.png "_Рис. 1, неполная матрица MITRE ATT&CK_")
+![Рис1](./screen/screen1.png "_Рис. 1, неполная матрица MITRE ATT&CK_")
 
 
 Также на сайте MITRE ATT&CK можно найти:
 - Информацию о группировках злоумышленников (кластеры активности),
 - Описание их типичного поведения.
 
-![Компьютер](/screen/screen2.png "_Рис. 2, информация об Detection в разделе «Compromise Infrastructure»_")
+![Рис2](./screen/screen2.png "_Рис. 2, информация об Detection в разделе «Compromise Infrastructure»_")
 
 ---
 
@@ -33,7 +33,7 @@ MITRE – это некоммерческая организация из США
 - Актуальная версия: **2021**
 - Ожидаемое обновление: **первая половина 2025 года**
 
-![Компьютер](/screen/screen3.png "_Рис. 3, Отчет OWASP Tоp-10_")
+![Рис3](./screen/screen3.png "_Рис. 3, Отчет OWASP Tоp-10_")
 
 ## OWASP ASVS
 
@@ -49,7 +49,7 @@ MITRE – это некоммерческая организация из США
 - **OWASP Top-10 LLM and Gen AI 2025**
 - Документ доступен на русском языке от **11 марта 2025 года**
 
-![Компьютер](/screen/screen4.png "_Рис. 4, OWASP Top-10 LLM and Gen AI 2025_")
+![Рис4](./screen/screen4.png "_Рис. 4, OWASP Top-10 LLM and Gen AI 2025_")
 
 ## OWASP Juice Shop
 
