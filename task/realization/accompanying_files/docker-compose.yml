@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.5
+    container_name: dvwa-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: dvwa
+      MYSQL_USER: dvwa
+      MYSQL_PASSWORD: password
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - app
+
+  dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: dvwa
+      DB_PASSWORD: password
+      DB_DATABASE: dvwa
+    expose:
+      - "80"
+    networks:
+      - app
+
+  waf:
+    build: /home/student/dvwa/waf-dvwa/waf-dvwa/waf-dvwa/modsec/  
+    container_name: nginx-modsec
+    ports:
+      - "8080:80"
+    depends_on:
+      - dvwa
+    restart: always
+    volumes:
+      - ./modsec/var/log/modsec:/var/log/modsec
+    networks:
+      - app
+
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.14
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    networks:
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.14
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.17.14
+    container_name: filebeat
+    user: root
+    volumes:
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./modsec/var/log/modsec:/var/log/modsec:ro
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk
+
+networks:
+  elk:
+    driver: bridge
+  app:
+    driver: bridge
+
+volumes:
+  db-data:

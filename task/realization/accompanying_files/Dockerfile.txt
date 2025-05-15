@@ -1,0 +1,75 @@
+# ----------------------------------------------------------------------------
+# 1. Базовый образ
+# ----------------------------------------------------------------------------
+FROM debian:bullseye
+
+# ----------------------------------------------------------------------------
+# 2. Устанавливаем зависимости для сборки ModSecurity и nginx
+# ----------------------------------------------------------------------------
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpcre2-dev \
+    libssl-dev \
+    zlib1g-dev \
+    git \
+    wget \
+    automake \
+    autoconf \
+    libtool \
+    pkgconf \
+    libyajl-dev \
+    libgeoip-dev \
+    liblmdb-dev \
+    libxml2-dev \
+    libxslt1-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+# ----------------------------------------------------------------------------
+# 3. Сборка и установка ModSecurity v3
+# ----------------------------------------------------------------------------
+RUN git clone --depth 1 -b v3/master --recursive https://github.com/SpiderLabs/ModSecurity.git /ModSecurity \
+  && cd /ModSecurity \
+  && ./build.sh \
+  && ./configure \
+  && make -j"$(nproc)" \
+  && make install
+
+# ----------------------------------------------------------------------------
+# 4. Сборка nginx 1.24.0 с динамическим модулем ModSecurity-nginx
+# ----------------------------------------------------------------------------
+RUN git clone --depth 1 https://github.com/SpiderLabs/ModSecurity-nginx.git /ModSecurity-nginx \
+  && mkdir -p /usr/src \
+  && cd /usr/src \
+  && wget http://nginx.org/download/nginx-1.24.0.tar.gz \
+  && tar zxvf nginx-1.24.0.tar.gz \
+  && cd nginx-1.24.0 \
+  && ./configure \
+       --prefix=/etc/nginx \
+       --sbin-path=/usr/sbin/nginx \
+       --modules-path=/etc/nginx/modules \
+       --conf-path=/etc/nginx/nginx.conf \
+       --error-log-path=/var/log/nginx/error.log \
+       --http-log-path=/var/log/nginx/access.log \
+       --with-compat \
+       --add-dynamic-module=/ModSecurity-nginx \
+  && make -j"$(nproc)" \
+  && make install
+
+# ----------------------------------------------------------------------------
+# 5. Создаём необходимые директории для ModSecurity
+# ----------------------------------------------------------------------------
+RUN mkdir -p /etc/modsecurity \
+  && mkdir -p /var/log/modsec
+
+# ----------------------------------------------------------------------------
+# 6. Копируем конфигурационные файлы WAF и nginx
+# ----------------------------------------------------------------------------
+COPY modsec.conf /etc/modsecurity/modsec.conf
+COPY nginx.conf  /etc/nginx/nginx.conf
+
+# ----------------------------------------------------------------------------
+# 7. Открываем порт и задаём команду запуска
+# ----------------------------------------------------------------------------
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

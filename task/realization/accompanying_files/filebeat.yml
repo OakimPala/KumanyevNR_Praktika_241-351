@@ -1,0 +1,39 @@
+filebeat.inputs:
+
+- type: log
+
+  enabled: true
+
+  paths:
+
+    - /var/log/modsec/audit.log
+
+  fields:
+
+    service.name: modsecurity
+
+  multiline.pattern: '^--[0-9a-f]{8}--$'
+
+  multiline.negate: false
+
+  multiline.match: after
+
+  fields_under_root: true
+
+
+
+
+
+output.elasticsearch:
+
+  hosts: ["elasticsearch:9200"]
+
+
+
+setup.kibana:
+
+  host: "kibana:5601"
+
+
+
+setup.ilm.overwrite: true
