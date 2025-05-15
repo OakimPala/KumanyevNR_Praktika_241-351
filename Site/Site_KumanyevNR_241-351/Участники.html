@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проектная деятельность: Участники проекта</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    header img {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    main {
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #fff;
+    }
+    .member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .member img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    .member-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .member-name {
+      font-weight: bold;
+      color: #000;
+    }
+    .member-role {
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: white;
+      margin-top: 40px;
+    }
+	nav {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://old.mospolytech.ru/img_new/top_bn/top_sh.png">
+    <h1>Московский Политех — Студенческое научное общество</h1>
+  </header>
+  
+  <nav>
+    <a href="Аннотация.html">Главная</a>
+    <a href="Участники.html">Участники проекта</a>
+    <a href="Ресурсы.html">Ресурсы</a>
+    <a href="Журнал.html">Журнал</a>
+    <a href="Описание.html">О проекте</a>
+	<a href="МероприятиеПартнеров.html">Взаимодействие с организацией-партнёром</a>
+  </nav>
+
+  <main>
+    <h2 style="background-color: #000; padding: 10px;">Участники проекта</h2>
+
+    <div class="member">
+      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fvk-wiki.ru%2Fkak-ustanovit-avatar-vkontakte%2F&psig=AOvVaw14RsDjCgtAhndFFBbcXef3&ust=1745420486183000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj5vpX064wDFQAAAAAdAAAAABAE">
+      <div class="member-info">
+        <span class="member-name">Осьминова Марианна Борисовна</span>
+        <span class="member-role">Руководитель проекта</span>
+      </div>
+    </div>
+
+   
+    <script>
+      const участники = [
+        "Семенов Алексей", "Пермин Дмитрий", "Созанчук Мария", "Петрухина Таисия", "Найдина Екатерина", "Поспелова Мария", 
+        "Осколкова Евдокия", "Лесниченко Михаил", "Габбасова Дарья", "Клишин Эльдар", "Дзеранов Артур", "Воронцов Илья", 
+        "Будакин Егор", "Ахундов Артем", "Пшеничникова Арина", "Загирьянов Азат", "Логвиненко Анастасия", "Куманяев Никита", 
+        "Карапецкий Александр", "Чарычанский Даниил", "Подлатова Мария", "Лебедев Арсений", "Курепин Владислав", 
+        "Кудрявцев Владислав", "Деменков Никита", "Володина Виктория", "Бондарь Тимофей", "Агеева Софья"
+      ];
+
+      const container = document.querySelector('main');
+
+      участники.forEach(name => {
+        const div = document.createElement('div');
+        div.className = 'member';
+
+        const img = document.createElement('img');
+        img.src = name === "Куманяев Никита" ?
+          "https://sun6-21.userapi.com/s/v1/ig2/XE1-6sooWj0VR9IyzXEbmYneuPzsXU5ezwWUmleJBNfGaRp35kJrR-uWAbvTsCz4qWvIRuxmoX_W7YNWZZ1Kkp7W.jpg?quality=95&crop=17,287,1911,1911&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&ava=1&cs=200x200" :
+          "https://www.google.com/url?sa=i&url=https%3A%2F%2Fvk-wiki.ru%2Fkak-ustanovit-avatar-vkontakte%2F&psig=AOvVaw14RsDjCgtAhndFFBbcXef3&ust=1745420486183000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj5vpX064wDFQAAAAAdAAAAABAE";
+
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'member-info';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'member-name';
+        nameSpan.textContent = name;
+
+        const roleSpan = document.createElement('span');
+        roleSpan.className = 'member-role';
+        roleSpan.textContent = 'Участник, отвечает за контент в социальных сетях';
+
+        infoDiv.appendChild(nameSpan);
+        infoDiv.appendChild(roleSpan);
+        div.appendChild(img);
+        div.appendChild(infoDiv);
+        container.appendChild(div);
+      });
+    </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Московский Политех. Все права защищены.</p>
+  </footer>
+</body>
+</html>
