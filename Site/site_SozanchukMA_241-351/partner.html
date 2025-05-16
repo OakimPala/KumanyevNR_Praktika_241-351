@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёт</title>
+    <style>
+        /* Стили для фотоотчёта */
+        .report-photos {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .report-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .report-photo:hover {
+            transform: scale(1.02);
+        }
+        
+        .experience-text {
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <h1>ВЗАИМОДЕЙСТВИЕ С ОРГАНИЗАЦИЕЙ-ПАРТНЁРОМ</h1>
+    </header>
+    
+    <!-- Меню -->
+    <div class="menu-container">
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="about.html" class="menu-item">О проекте</a>
+        <a href="team.html" class="menu-item">Участники</a>
+        <a href="blog.html" class="menu-item">Журнал</a>
+        <a href="resources.html" class="menu-item">Ресурсы</a>
+        <a href="partner.html" class="menu-item current">Отчёт</a>
+    </div>
+    
+    <!-- Основной контент -->
+    <main class="content-block" style="max-width: 1000px; margin: 30px auto;">
+        <h2>Полученные знания и опыт в ходе мастер-класса</h2>
+        <div class="orange-divider"></div>
+        
+        <div class="experience-text">
+            <p>В рамках карьерного марафона мы прошли мастер-класс "Стажировка в Московском транспорте или как найти дело всей жизни в Правительстве Москвы". Партнёром является Правительство Москвы.
+
+            <br><br>В рамках мастер-класса нам рассказали об истории Московского транспорта, подробно описали процесс найма на стажировку и того, как она проходит. Показали реальные примеры студентов старших курсов, прошедших стажировку и сейчас занимающих должности в Московском транспорте.
+
+            <br><br>В конце мастер-класса мы прошли опрос на понимание рассказанного. Тому, кто получил наилучший результат, вручили мерч от Московского транспорта. 
+
+            <br><br>В ходе мастер-класса мы узнали о возможностях стажировки в Московском транспорте, сохранили ссылки на формы для подачи заявок на осеннюю стажировку и получили возможность задать вопросы насчёт работы в этой компании.</p>
+        </div>
+        
+        <h2>Фотоотчёт</h2>
+        <div class="orange-divider"></div>
+        
+        <div class="report-photos">
+            <!-- Первое фото -->
+            <img src="images/reportGENERAL.jpeg" alt="Мастер-класс общее фото" class="report-photo">
+            
+            <!-- Второе фото -->
+            <img src="images/reportPERSONAL.jpg" alt="Мастер-класс моё фото" class="report-photo">
+        </div>
+    </main>
+    
+    <footer class="copyright">
+        &copy; Мария Созанчук, 2025 год
+    </footer>
+</body>
+</html>
