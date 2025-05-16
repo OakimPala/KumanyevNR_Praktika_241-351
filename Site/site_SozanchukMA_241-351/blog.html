@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Журнал проекта</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Стили для журнала */
+        .journal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .journal-entry {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .journal-entry:hover {
+            transform: translateY(-5px);
+        }
+        
+        .entry-date {
+            color: #f7b100;
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        .entry-content {
+            line-height: 1.6;
+        }
+        
+        .entry-author {
+            font-style: italic;
+            margin-top: 15px;
+            color: #f7b100;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>СОЗДАНИЕ НАУЧНО-ПОПУЛЯРНОГО КОНТЕНТА</h1>
+    </header>
+    
+    <div class="menu-container">
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="about.html" class="menu-item">О проекте</a>
+        <a href="team.html" class="menu-item">Участники</a>
+        <a href="blog.html" class="menu-item current">Журнал</a>
+        <a href="resources.html" class="menu-item">Ресурсы</a>
+    </div>
+    
+    <main>
+        <div class="content-block">
+            <h2>Журнал проекта</h2>
+            <div class="orange-divider"></div>
+            
+            <div class="journal-grid">
+                <!-- Запись 1 -->
+                <div class="journal-entry">
+                    <h3>Анализ контента в группе ВК</h3>
+                    <div class="entry-date">4 февраля 2025</div>
+                    <div class="orange-divider"></div>
+                    <div class="entry-content">
+                        <p>Прошло собрание без разделения на группы. Проведён анализ выложенного ранее контента в группе ВК</p>
+                        <ul>
+                            <li>Проанализированы изменения общего стиля</li>
+                            <li>Проведен опрос с выбором нового стиля</li>
+                            <li>Подведены итоги работы за три года существования группы</li>
+                        </ul>
+                    </div>
+                    <div class="entry-author">Отв.: Марианна Борисовна</div>
+                </div>
+                
+                <!-- Запись 2 -->
+                <div class="journal-entry">
+                    <h3>Анализ соцсетей других ВУЗов</h3>
+                    <div class="entry-date">25 февраля 2025</div>
+                    <div class="orange-divider"></div>
+                    <div class="entry-content">
+                        <p>Каждый участнник проекта провёл анализ соцсетей нескольких ВУЗов и представил его в качестве выступления с презентацией.</p>
+                        <p>Подведены итоги и определены лучшие стороны соцсетей каждого ВУЗа.</p>
+                    </div>
+                    <div class="entry-author">Отв.: Каждый участник проекта за себя</div>
+                </div>
+                
+                <!-- Запись 3 -->
+                <div class="journal-entry">
+                    <h3>Создание контент-плана для ВК и ТГ</h3>
+                    <div class="entry-date">18 марта 2025</div>
+                    <div class="orange-divider"></div>
+                    <div class="entry-content">
+                        <p>Проведена работа по группам, разработан контент-план для групп ВК и ТГ.</p>
+                        <p>Определены рубрики для обеих групп, распределены задачи для участников.</p>
+                    </div>
+                    <div class="entry-author">Отв.: Тася Петрухина, Соня Агеева</div>
+                </div>
+                
+                <!-- Запись 4 -->
+                <div class="journal-entry">
+                    <h3>Публикация постов в ВК и ТГ</h3>
+                    <div class="entry-date">15-29 апреля 2025</div>
+                    <div class="orange-divider"></div>
+                    <div class="entry-content">
+                        <p>Опубликованы посты всех разработанных рубрик. Собрана статистика и реакция по каждой рубрике, проведён анализ реакции аудитории и сделаны выводы на будущее развитие соцсетей СНО</p>
+                    </div>
+                    <div class="entry-author">Отв.: Тася Петрухина, Соня Агеева</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="copyright">
+        &copy; Мария Созанчук, 2025 год
+    </footer>
+</body>
+</html>

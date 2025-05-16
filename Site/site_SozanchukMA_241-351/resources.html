@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресурсы проекта</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Стили для страницы ресурсов */
+        .resources-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .resource-block {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .resource-title {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .resource-title a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .resource-title a:hover {
+            color: #f7b100;
+        }
+        
+        .resource-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .resource-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .resource-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .resource-item a:hover {
+            color: #f7b100;
+            text-decoration: underline;
+        }
+        
+        .resource-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .resources-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>СОЗДАНИЕ НАУЧНО-ПОПУЛЯРНОГО КОНТЕНТА</h1>
+    </header>
+    
+    <div class="menu-container">
+        <a href="index.html" class="menu-item">Главная</a>
+        <a href="about.html" class="menu-item">О проекте</a>
+        <a href="team.html" class="menu-item">Участники</a>
+        <a href="blog.html" class="menu-item">Журнал</a>
+        <a href="resources.html" class="menu-item current">Ресурсы</a>
+    </div>
+    
+    <main>
+        <div class="content-block">
+            <h2>Материалы проекта: кликабельные ссылки</h2>
+            <div class="orange-divider"></div>
+            
+            <div class="resources-container">
+                <!-- Блок ВКонтакте -->
+                <div class="resource-block">
+                    <h3 class="resource-title">
+                        <a href="https://vk.com/sno.mospolytech?from=groups" target="_blank">Группа ВКонтакте</a>
+                    </h3>
+                    <div class="orange-divider"></div>
+                    
+                    <div class="resource-item">
+                        <a href="https://vk.com/wall-210882278_1690" target="_blank">Сибирский плюм: вся правда</a>
+                        <div class="resource-desc">Разбор скандальной истории с магнитическим плюмом в Сибири</div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <a href="https://vk.com/wall-210882278_1684" target="_blank">Поэты и учёные</a>
+                        <div class="resource-desc">Выдающиеся личности, совмещающие научные исследования с творчеством</div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <a href="https://vk.com/wall-210882278_1657" target="_blank">Анонс маскота СНО</a>
+                        <div class="resource-desc">Публикация о появлении маскота СНО и конкурс на его имя</div>
+                    </div>
+                </div>
+                
+                <!-- Блок Telegram -->
+                <div class="resource-block">
+                    <h3 class="resource-title">
+                        <a href="https://t.me/snomospolytech" target="_blank">Телеграм-канал</a>
+                    </h3>
+                    <div class="orange-divider"></div>
+                    
+                    <div class="resource-item">
+                        <a href="https://t.me/snomospolytech/108" target="_blank">Наука в быту</a>
+                        <div class="resource-desc">Пост с опросом на знание основы химической реакции</div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <a href="https://t.me/snomospolytech/100" target="_blank">Школьный блиц</a>
+                        <div class="resource-desc">Пост на знание школьной программы путём опроса о научном факте</div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <a href="https://t.me/snomospolytech/93" target="_blank">Развлекательный пост</a>
+                        <div class="resource-desc">Пост, направленный на разбавление контента, развлекательный контент</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="copyright">
+        &copy; Мария Созанчук, 2025 год
+    </footer>
+</body>
+</html>
